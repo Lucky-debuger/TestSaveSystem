@@ -5,7 +5,7 @@ public class ClickKeeperData // Зачем нужен, если есть ClickKe
 {
     public int _clicks {get; private set;} // Разобраться какие типы полей нужны
 
-    public ClickKeeperData(ClickKeeper clickKeeper) // Тут public потому что конструктор?
+    public ClickKeeperData(ClickKeeper clickKeeper)
     {
         _clicks = clickKeeper._clicks;
     }

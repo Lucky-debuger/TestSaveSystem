@@ -13,7 +13,6 @@ public class ToggleScreen : MonoBehaviour
         else if (Screen.fullScreenMode == FullScreenMode.Windowed)
         {
             Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
-            
         }
     }
 }

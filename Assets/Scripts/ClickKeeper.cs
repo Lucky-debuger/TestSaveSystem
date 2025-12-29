@@ -20,6 +20,9 @@ public class ClickKeeper : MonoBehaviour
     public void LoadClickKeeper()
     {
         ClickKeeperData data = SaveSystem.LoadClicksKeeperData();
+
+        if (data == null) return;
+
         _clicks = data._clicks;
         textCount.text = $"Clicks: {_clicks.ToString()}";
         textSavePath.text = $"SavePath: {Application.persistentDataPath.ToString()}";
@@ -30,7 +33,7 @@ public class ClickKeeper : MonoBehaviour
     public void ChangeClicks(int amount)
     {
         _clicks += amount;
-        textCount.text =$"Clicks: {_clicks.ToString()}";
+        textCount.text = $"Clicks: {_clicks.ToString()}";
     }
 
 #endregion

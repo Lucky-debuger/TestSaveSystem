@@ -1,12 +1,14 @@
 using UnityEngine;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary; // Разобраться с прастранствами имен и зачем они нужны
+using System.Runtime.Serialization.Formatters.Binary; // Разобраться с прастранствами имен и зачем они нужны 
+
+// BinaryFormatter устарел, использовать BinaryWriter или что-то ещё
 
 public static class SaveSystem // Стоит ли делать staic? И зачем?
 {
     public static void SaveClicksKeeperData(ClickKeeper clickKeeper)
     {
-        BinaryFormatter formatter = new BinaryFormatter(); // Еще раз что это?
+        BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/ClickKeeper.myformat";
         Debug.Log(Application.persistentDataPath);
         FileStream stream = new FileStream(path, FileMode.Create); // Разобраться, что строка
@@ -18,7 +20,7 @@ public static class SaveSystem // Стоит ли делать staic? И зач�
 
     public static ClickKeeperData LoadClicksKeeperData()
     {
-        string path = Application.persistentDataPath + "/ClickKeeper.myformat"; // Что такое persistentDataPath?
+        string path = Application.persistentDataPath + "/ClickKeeper.myformat";
 
         if (File.Exists(path))
         {
